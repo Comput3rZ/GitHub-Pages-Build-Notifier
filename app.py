@@ -2,11 +2,13 @@ import requests
 import time
 import os
 
+URL = "YOUR-URL"
+
 # The notifier function
 def notify(title, message):
     t = '-title {!r}'.format(title)
     m = '-message {!r}'.format(message)
-    i = '-appIcon {!r}'.format("/Users/bensommer/Local/Sites/Notifier/icon.png")
+    i = '-appIcon {!r}'.format("path/to/icon.png")
     os.system('terminal-notifier {}'.format(' '.join([m, t, i])))
 
 def Ok():
@@ -20,7 +22,7 @@ prev = ""
 first = True
 
 while True:
-    url = "https://school.bensommer.co.uk"
+    url = URL
     response = requests.get(url)
     text = response.text
 
